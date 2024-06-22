@@ -31,10 +31,11 @@ while game_is_on:
     if ball.ycor() > 280 or ball.ycor() < -280:
         ball.bounce_y()
 
+    # detecting paddle with the ball 
     if (ball.distance(right_paddle) < 50 and ball.xcor() > 330 or
             ball.distance(left_paddle) < 50 and ball.xcor() < -330):
         ball.bounce_x()
-
+# bounce backing of ball after the detection and updating the scorecard  
     if ball.xcor() > 380:
         ball.bounce_back()
         scoreboard.left_point()
